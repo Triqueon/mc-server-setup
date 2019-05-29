@@ -5,11 +5,9 @@ After=network.service
 [Service]
 User=minecraft
 Group=minecraft
-Type=simple
 WorkingDirectory=/usr/local/minecraft/
-ExecStart=java -Xms64M -Xmx1536M -jar /usr/local/minecraft/server.jar nogui
+ExecStart=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -Xms64M -Xmx1536M -jar /usr/local/minecraft/server.jar nogui
 ExecStop=kill -9 $MAINPID
-PIDFile=/usr/local/teamspeak/ts3server.pid
 RestartSec=15
 Restart=always
 
