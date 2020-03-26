@@ -12,10 +12,13 @@ rm -rf ${VERSION}
 rm terraria-server.zip
 sudo chown -R terraria:terraria /usr/local/terraria
 sudo cp terraria.service.default /etc/systemd/system/terraria.service
+sudo cp terraria.config /usr/local/terraria/terraria.config
 sudo ufw allow 7777
 sudo chmod +x /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
 sudo -H -u terraria sh -c /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
 sudo systemctl daemon-reload
 sudo systemctl enable terraria.service
+echo "Installation successful. Starting service, this may take a while..."
 sudo systemctl start terraria
+echo "Service started successfully."
 sudo systemctl status terraria
