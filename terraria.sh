@@ -9,7 +9,7 @@ wget -O terraria-server.zip http://terraria.org/server/terraria-server-${VERSION
 unzip terraria-server.zip
 rm -rf ${VERSION}/Windows
 rm -rf ${VERSION}/Mac
-sudo mv ${VERSION} /usr/local/terraria
+sudo mv ${VERSION}/Linux/* /usr/local/terraria
 rm -rf ${VERSION}
 rm terraria-server.zip
 sudo chown -R terraria:terraria /usr/local/terraria
