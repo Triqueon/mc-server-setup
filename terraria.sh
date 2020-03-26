@@ -14,7 +14,7 @@ sudo chown -R terraria:terraria /usr/local/terraria
 sudo cp terraria.service.default /etc/systemd/system/terraria.service
 sudo ufw allow 7777
 sudo chmod +x /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
-sudo -u terraria /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
+sudo -H -u terraria sh -c /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
 sudo systemctl daemon-reload
 sudo systemctl enable terraria.service
 sudo systemctl start terraria
