@@ -5,9 +5,11 @@ After=network.service
 [Service]
 User=terraria
 Group=terraria
+Type=forking
+KillMode=none
 WorkingDirectory=/usr/local/terraria
-ExecStart=/usr/local/terraria/TerrariaServer.bin.x86_64 -config terraria.config
-ExecStop=kill -9 $MAINPID
+ExecStart=/usr/bin/screen -dmS terraria /bin/bash -c "/usr/local/terraria/TerrariaServer.bin.x86_64 -config terraria.config"
+ExecStop=/usr/local/bin/terrariad exit
 RestartSec=15
 Restart=always
 
