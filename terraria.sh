@@ -7,16 +7,14 @@ if ! id "terraria" >/dev/null 2>&1; then
 fi
 wget -O terraria-server.zip http://terraria.org/server/terraria-server-${VERSION}.zip
 unzip terraria-server.zip
-rm -rf ${VERSION}/Windows
-rm -rf ${VERSION}/Mac
 sudo mv ${VERSION}/Linux/* /usr/local/terraria
 rm -rf ${VERSION}
 rm terraria-server.zip
 sudo chown -R terraria:terraria /usr/local/terraria
 sudo cp terraria.service.default /etc/systemd/system/terraria.service
 sudo ufw allow 7777
-sudo chmod +x /usr/local/terraria/Linux/TerrariaServer.bin.${ARCHITECTURE}
-sudo -u terraria /usr/local/terraria/Linux/TerrariaServer.bin.${ARCHITECTURE}
+sudo chmod +x /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
+sudo -u terraria /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
 sudo systemctl daemon-reload
 sudo systemctl enable terraria.service
 sudo systemctl start terraria
