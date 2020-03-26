@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 VERSION=1353
-if [ ! id "terraria" >/dev/null 2>&1; ] then
+if ! id "terraria" >/dev/null 2>&1; then
   sudo adduser --disabled-login terraria
 fi
 wget -O terraria-server.zip http://terraria.org/server/terraria-server-${VERSION}.zip
