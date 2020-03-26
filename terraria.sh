@@ -1,7 +1,9 @@
 #!/bin/sh -e
 
 VERSION=1353
-sudo adduser --disabled-login terraria
+if [! id "terraria" >/dev/null 2>&1; ] then
+  sudo adduser --disabled-login terraria
+fi
 wget -O terraria-server.zip http://terraria.org/server/terraria-server-${VERSION}.zip
 unzip terraria-server.zip
 rm -rf ${VERSION}/Windows
