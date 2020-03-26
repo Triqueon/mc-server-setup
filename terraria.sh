@@ -7,6 +7,8 @@ unzip terraria-server.zip
 rm -rf ${VERSION}/Windows
 rm -rf ${VERSION}/Mac
 sudo mv ${VERSION} /usr/local/terraria
+rm -rf ${VERSION}
+rm terraria-server.zip
 sudo chown -R terraria:terraria /usr/local/terraria
 sudo cp terraria.service.default /etc/systemd/system/terraria.service
 sudo ufw allow 7777
