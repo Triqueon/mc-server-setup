@@ -7,7 +7,7 @@ if ! id "terraria" >/dev/null 2>&1; then
 fi
 wget -O terraria-server.zip http://terraria.org/server/terraria-server-${VERSION}.zip
 unzip terraria-server.zip
-sudo mv ${VERSION}/Linux/* /usr/local/terraria
+sudo mv -f ${VERSION}/Linux/* /usr/local/terraria
 rm -rf ${VERSION}
 rm terraria-server.zip
 sudo chown -R terraria:terraria /usr/local/terraria
