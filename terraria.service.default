@@ -1,0 +1,16 @@
+[Unit]
+Description=Terraria Server
+After=network.service
+
+[Service]
+User=terraria
+Group=terraria
+Type=forking
+WorkingDirectory=/usr/local/terraria
+ExecStart=/usr/local/terraria/TerrariaServer.bin.x86_64
+ExecStop=kill -9 $MAINPID
+RestartSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
