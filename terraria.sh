@@ -18,7 +18,7 @@ rm -rf ${VERSION}
 rm terraria-server.zip
 sudo chown -R terraria:terraria /usr/local/terraria
 sudo cp terraria.service.default /etc/systemd/system/terraria.service
-sudo sed -i "s/WORLDNAME/${NAME}/g" terraria.config > /usr/local/terraria/terraria.config
+sudo sed "s/WORLDNAME/${NAME}/g" terraria.config | sed "s/PASSWORD/${PASS}/g" > /usr/local/terraria/terraria.config
 sudo ufw allow 7777
 sudo chmod +x /usr/local/terraria/TerrariaServer.bin.${ARCHITECTURE}
 sudo systemctl daemon-reload
