@@ -6,7 +6,7 @@ if ! id "minecraft" >/dev/null 2>&1; then
 fi
 
 #Download JAR File. This may need to updated for the current version
-wget -O server.jar https://launcher.mojang.com/v1/objects/808be3869e2ca6b62378f9f4b33c946621620019/server.jar
+wget -O server.jar https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar
 sudo mkdir /usr/local/minecraft
 sudo mv server.jar /usr/local/minecraft/
 
